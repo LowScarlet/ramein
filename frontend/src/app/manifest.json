@@ -1,0 +1,20 @@
+{
+  "name": "Sistem Informasi Manajemen Admin ICC",
+  "short_name": "SIM Admin ICC",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "/pwa/192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/pwa/152.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}

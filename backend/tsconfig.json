@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "ESNext", // Use the latest ECMAScript features.
+    "module": "NodeNext", // Modern module resolution for Node.js.
+    "esModuleInterop": true, // Enable interoperability with CommonJS modules.
+    "forceConsistentCasingInFileNames": true, // Ensure consistent file naming.
+    "strict": true, // Enable all strict type-checking options.
+    "skipLibCheck": true, // Skip checking types of declaration files.
+    "allowSyntheticDefaultImports": true, // Use default imports with synthetic modules.
+    "resolveJsonModule": true, // Allow importing JSON files.
+    "useDefineForClassFields": true, // Align class fields with the latest spec.
+    "noImplicitOverride": true, // Require `override` keyword in overridden methods.
+    "noUncheckedIndexedAccess": true, // Treat element accesses as possibly undefined.
+    "exactOptionalPropertyTypes": true, // Use exact types for optional properties.
+    "allowImportingTsExtensions": true,
+    "noEmit": true
+  },
+  "include": ["src"], // Include the source files directory.
+  "exclude": ["node_modules", "dist"] // Exclude build and dependency directories.
+}
