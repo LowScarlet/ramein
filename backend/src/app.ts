@@ -14,7 +14,7 @@ const app: Application = express();
 app.use(handle(i18n));
 
 app.use(cors({
-  origin: [getDomainUrl(FRONTEND_DOMAIN.admin), getDomainUrl(FRONTEND_DOMAIN.student)],
+  origin: [getDomainUrl(FRONTEND_DOMAIN)],
   credentials: true,
 }));
 
@@ -22,9 +22,6 @@ app.use(cors({
 app.set("json spaces", 2);
 app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ extended: true, limit: "50mb" }));
-
-// Routes setup
-app.use("/", PreObject, routes);
 
 app.use((req: Request, res: Response, next: NextFunction) => {
   res.status(404).json({

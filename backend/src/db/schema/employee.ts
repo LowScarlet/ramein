@@ -9,9 +9,6 @@ import {
 } from "drizzle-orm/pg-core";
 import { enumGender, enumReligion } from "./_enum.ts";
 import { user } from "./user.ts";
-import { classRoom } from "./career/classRoom.ts";
-import { classRoomActivity } from "./career/classRoomActivity.ts";
-import { studentRegistration } from "./career/studentRegistration.ts";
 
 export const enumEmployeeStatus = pgEnum("employee_status", [
   "FULL_TIME",
@@ -58,7 +55,4 @@ export const employeeRels = relations(employee, ({ one, many }) => ({
     fields: [employee.userId],
     references: [user.id],
   }), //
-  instructorOfCareerClassRoom: many(classRoom), //
-  checkerOfCareerClassroomActivity: many(classRoomActivity), //
-  presenterOfRegistration: many(studentRegistration),
 }));

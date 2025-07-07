@@ -10,7 +10,6 @@ import { relations } from "drizzle-orm";
 import { employee } from "./employee.ts";
 import { oneTimePassword } from "./oneTimePassword.ts";
 import { refreshToken } from "./refreshToken.ts";
-import { student } from "./career/student.ts";
 
 export const enumUserRole = pgEnum("user_role", [
   "STUDENT",
@@ -41,8 +40,4 @@ export const userRels = relations(user, ({ one, many }) => ({
   employee: one(employee),
   refreshToken: many(refreshToken),
   oneTimePassword: many(oneTimePassword),
-  careerStudent: one(student, {
-    fields: [user.id],
-    references: [student.userId],
-  }),
 }));
