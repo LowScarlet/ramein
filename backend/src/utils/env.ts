@@ -1,6 +1,6 @@
 import path from "path";
 
-export const LOCAL_IP = '192.168.1.2'
+export const LOCAL_IP = '192.168.1.8'
 export const NODE_ENV = process.env.NODE_ENV || 'dev';
 export const PROTOCOL = process.env.PROTOCOL || 'http';
 export const BACKEND_DOMAIN = process.env.RAILWAY_PUBLIC_DOMAIN || LOCAL_IP + ':5100';

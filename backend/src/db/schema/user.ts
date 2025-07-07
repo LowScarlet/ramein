@@ -5,6 +5,7 @@ import {
   pgEnum,
   serial,
   timestamp,
+  integer
 } from "drizzle-orm/pg-core";
 import { relations } from "drizzle-orm";
 import { oneTimePassword } from "./oneTimePassword.ts";
@@ -18,6 +19,7 @@ export const enumUserRole = pgEnum("user_role", [
 export const user = pgTable("user", {
   id: serial().primaryKey(),
 
+  banner: text(),
   photo: text(),
 
   fullName: text().notNull(),
@@ -26,6 +28,7 @@ export const user = pgTable("user", {
   password: text().notNull(),
   isActive: boolean().default(false),
   role: enumUserRole().default("MEMBER"),
+  exp: integer().default(0).notNull(),
   bio: text(),
 
   createdAt: timestamp().defaultNow(),

@@ -7,7 +7,7 @@ export default function HomePage() {
     <>
       <Header />
       <main className="flex lg:flex-row flex-col justify-between gap-4 bg-blue-100 p-4">
-        <LeftNav />
+          <LeftNav />
         <div className="space-y-4">
           {[1, 2, 3, 4, 5].map((index) => (
             <div key={index} className="w-136">
@@ -97,7 +97,7 @@ export default function HomePage() {
                     A card component has a figure, a body part, and inside body
                     there are title and actions parts
                   </p>
-
+                  
                   <h2 className="flex items-center gap-1 mt-2 text-gray-800">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -171,7 +171,7 @@ export default function HomePage() {
             </div>
           ))}
         </div>
-        <RightNav />
+          <RightNav />
       </main>
     </>
   );

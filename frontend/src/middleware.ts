@@ -14,11 +14,6 @@ export default async function mainMiddleware(request: NextRequest) {
     return NextResponse.redirect(redirectUrl);
   }
 
-  if (url.pathname === '/') {
-    const dashboardUrl = new URL('/home', request.url);
-    return NextResponse.redirect(dashboardUrl);
-  }
-
   return NextResponse.next();
 }
 
