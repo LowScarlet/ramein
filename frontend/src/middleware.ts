@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
-import AuthMiddleware from './app/middleware';
 import { FRONTEND_DOMAIN, getDomainUrl, PROTOCOL } from './env';
 
 export default async function mainMiddleware(request: NextRequest) {
@@ -18,10 +17,6 @@ export default async function mainMiddleware(request: NextRequest) {
   if (url.pathname === '/') {
     const dashboardUrl = new URL('/home', request.url);
     return NextResponse.redirect(dashboardUrl);
-  }
-
-  if (url.pathname.startsWith('/auth')) {
-    return AuthMiddleware(request);
   }
 
   return NextResponse.next();
