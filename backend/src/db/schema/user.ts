@@ -7,13 +7,12 @@ import {
   timestamp,
 } from "drizzle-orm/pg-core";
 import { relations } from "drizzle-orm";
-import { employee } from "./employee.ts";
 import { oneTimePassword } from "./oneTimePassword.ts";
 import { refreshToken } from "./refreshToken.ts";
 
 export const enumUserRole = pgEnum("user_role", [
-  "STUDENT",
-  "EMPLOYEE",
+  "MEMBER",
+  "ADMIN",
 ]);
 
 export const user = pgTable("user", {
@@ -25,8 +24,8 @@ export const user = pgTable("user", {
   userName: text().unique().notNull(),
   email: text().unique().notNull(),
   password: text().notNull(),
-  isMaster: boolean().default(false),
-  role: enumUserRole().default("STUDENT"),
+  isActive: boolean().default(false),
+  role: enumUserRole().default("MEMBER"),
   bio: text(),
 
   createdAt: timestamp().defaultNow(),
@@ -37,7 +36,6 @@ export const user = pgTable("user", {
 });
 
 export const userRels = relations(user, ({ one, many }) => ({
-  employee: one(employee),
   refreshToken: many(refreshToken),
   oneTimePassword: many(oneTimePassword),
 }));
