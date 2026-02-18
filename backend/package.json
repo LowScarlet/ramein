@@ -24,7 +24,7 @@
     "drizzle-erd": "^0.0.1-alpha.11",
     "drizzle-orm": "^0.44.2",
     "drizzle-seed": "^0.1.2",
-    "express": "^4.21.1",
+    "express": "^4.22.1",
     "express-validator": "^7.2.0",
     "i18next": "^24.0.2",
     "i18next-fs-backend": "^2.6.0",
